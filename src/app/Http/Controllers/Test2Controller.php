@@ -8,11 +8,11 @@ use App\Models\Product;
 
 class Test2Controller extends Controller
 {
-    public function index(ProductRequest $request)
+    public function index(Request $request)
     {
-        $product = $request->only(['name', 'price', 'image']);
-        
-        return view('index', compact('product'));
+        $products = Product::all();
+        $products = Product::Paginate(6);
+        return view('index', compact('products'));
 	  }
 
     public function detail(Request $request)
@@ -25,11 +25,17 @@ class Test2Controller extends Controller
         return view('');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
-        $product = $request->only(['name', 'price', 'image', 'season', 'description']);
-        Product::create($product);
+        
         return view('register');
+    }
+
+    public function create(ProductRequest $request)
+    {
+        $form = $request->all();
+        Product::create($form);
+        return redirect('/products');
     }
 
     public function search(Request $request)

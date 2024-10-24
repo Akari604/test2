@@ -18,7 +18,7 @@
         <div class="main-title">
             <h2>商品一覧</h2>
         </div>
-        <form class="contents-detail" action="/products" method="post" enctype="multipart/form-data">
+        <form class="contents-detail" action="/products/register" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-whole">
                 <div div class="form__group">

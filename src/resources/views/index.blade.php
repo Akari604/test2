@@ -36,23 +36,32 @@
                 </select>
             </lavel>
         </form>
-        <form class="products-addition" action="/products/register" >
+        <form class="products-addition">
             <a class="products-addition__button" href="/products/register">
                 + 商品を追加
             </a>
             <div class="products">
+                @foreach ($products as $product)
+                @if( $product[3])
+                $product === [1]
+                @endif
                 <div class="products-card__item">
-                    <img class="kiwi_img" src="{{ asset('storage/kiwi.png') }}">
+                    {{ $product->image }}
                     <div class="products-card__text">
                         <p class="products-card__name">
-                            キウイ
+                            {{ $product->name }}
                         </p>
                         <p class="products-card__price">
-                            ￥800
+                            {{ $product->price }}
                         </p>
                     </div>
                 </div>
-                <div class="products-card__item">
+                @endforeach
+                <div class="paginate_links">
+                {{ $products->links() }}
+                </div>
+            </div>
+                <!-- <div class="products-card__item">
                     <img class="strawberry_img" src="{{ asset('storage/strawberry.png') }}">
                     <div class="products-card__text">
                         <p class="products-card__name">
@@ -157,7 +166,7 @@
                         </p>
                     </div>
                 </div>
-            </div> 
+            </div>  -->
         </form>
     </main> 
 </body>

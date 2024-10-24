@@ -20,6 +20,7 @@ main {
     display: flex;
     padding-top: 30px;
     padding-left: 55px;
+    height: 95vh;
 }
 
 /* .search-form {
@@ -31,6 +32,7 @@ main {
     position: relative;
     bottom: -160px;
     left: -175px;
+    height: fit-content;
 }
 
 .search-form__item-input {
@@ -123,5 +125,10 @@ main {
     background: #fff;
     display: flex;
     justify-content: space-around;
+}
+
+.paginate_links {
+    width: 30px;
+    height: 30px;
 }
 
