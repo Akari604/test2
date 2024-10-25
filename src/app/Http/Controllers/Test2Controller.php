@@ -15,19 +15,25 @@ class Test2Controller extends Controller
         return view('index', compact('products'));
 	  }
 
-    public function detail(Request $request)
+    public function edit($protectId)
     {
-        return view('detail');
+        $form = Product::find($protectId);
+        return view('detail')->with(':productId', $form);
     }
 
     public function update(Request $request)
     {
-        return view('');
+        $form = $request->all();
+        unset($form['_token']);
+        Product::find($request->id)->update($form);
+        return view('/products');
     }
 
     public function store(Request $request)
     {
-        
+        $img = $request->file('image');
+        $path = $img->store('storage');
+        $products->image = basename($path);
         return view('register');
     }
 

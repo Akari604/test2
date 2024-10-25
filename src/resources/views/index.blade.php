@@ -36,138 +36,32 @@
                 </select>
             </lavel>
         </form>
-        <form class="products-addition">
+        <div class="products-addition">
             <a class="products-addition__button" href="/products/register">
                 + 商品を追加
             </a>
-            <div class="products">
-                @foreach ($products as $product)
-                @if( $product[3])
-                $product === [1]
-                @endif
-                <div class="products-card__item">
-                    {{ $product->image }}
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            {{ $product->name }}
-                        </p>
-                        <p class="products-card__price">
-                            {{ $product->price }}
-                        </p>
-                    </div>
+
+                <div class="products">
+                    <ul>
+                        @foreach($products as $product)
+                        <li>
+                            <img src="{{ asset($product->image) }}" alt="商品画像" width="100">
+                            <div class="products-card__item">
+                                <p class="products-card__name">
+                                    {{ $product->name }}
+                                </p>
+                                <p class="products-card__price">
+                                    {{ $product->price }}
+                                </p>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
-                @endforeach
-                <div class="paginate_links">
-                {{ $products->links() }}
-                </div>
+            <div class="paginate_links">
+            {{ $products->links() }}
             </div>
-                <!-- <div class="products-card__item">
-                    <img class="strawberry_img" src="{{ asset('storage/strawberry.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            ストロベリー
-                        </p>
-                        <p class="products-card__price">
-                            ￥1200
-                        </p>
-                    </div>
-                </div>
-                <div class="products-card__item">
-                    <img class="orange_img" src="{{ asset('storage/orange.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            オレンジ
-                        </p>
-                        <p class="products-card__price">
-                            ￥850
-                        </p>
-                    </div>
-                </div>
-            </div> 
-            <div class="products">
-                <div class="products-card__item">
-                    <img class="watermelon_img" src="{{ asset('storage/watermelon.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            スイカ
-                        </p>
-                        <p class="products-card__price">
-                            ￥700
-                        </p>
-                    </div>
-                </div>
-                <div class="products-card__item">
-                    <img class="peach_img" src="{{ asset('storage/peach.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            ピーチ
-                        </p>
-                        <p class="products-card__price">
-                            ￥1000
-                        </P>
-                    </div>
-                </div>
-                <div class="products-card__item">
-                    <img class="muscat_img" src="{{ asset('storage/muscat.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            シャインマスカット
-                        </p>
-                        <p class="products-card__price">
-                            ￥1400
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="products">
-                <div class="products-card__item">
-                    <img class="pineapple_img" src="{{ asset('storage/pineapple.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            パイナップル
-                        </p>
-                        <p class="products-card__price">
-                            ￥800
-                        </p>
-                    </div>
-                </div>
-                <div class="products-card__item">
-                    <img class="grapes_img" src="{{ asset('storage/grapes.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            ブドウ
-                        </p>
-                        <p class="products-card__price">
-                            ￥1100
-                        </P>
-                    </div>
-                </div>
-                <div class="products-card__item">
-                    <img class="banana_img" src="{{ asset('storage/banana.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            バナナ
-                        </p>
-                        <p class="products-card__price">
-                            ￥600
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="products">
-                <div class="products-card__item">
-                    <img class="melon_img" src="{{ asset('storage/melon.png') }}">
-                    <div class="products-card__text">
-                        <p class="products-card__name">
-                            メロン
-                        </p>
-                        <p class="products-card__price">
-                            ￥900
-                        </p>
-                    </div>
-                </div>
-            </div>  -->
-        </form>
+        </div>
     </main> 
 </body>
 </html>

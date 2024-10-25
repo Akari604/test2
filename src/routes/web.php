@@ -19,8 +19,8 @@ use App\Http\Controllers\Test2Controller;
 // });
 
 Route::get('/products',[Test2Controller::class, 'index']);
-Route::post('/products/{:productId}',[Test2Controller::class, 'detail']);
-Route::patch('/products/{:productId}/update',[Test2Controller::class, 'update']);
+Route::get('/products/{:productId}',[Test2Controller::class, 'edit']);
+Route::post('/products/{:productId}/update',[Test2Controller::class, 'update']);
 Route::get('/products/register',[Test2Controller::class, 'store']);
 Route::post('/products/register',[Test2Controller::class, 'create']);
 Route::get('/products/search',[Test2Controller::class, 'search']);

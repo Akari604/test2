@@ -76,9 +76,25 @@ main {
     margin-top: 15px;
 }
 
+.products ul::after {
+    content: "";
+    color-interpolation-filters: both;
+    display: block;
+}
+
 .products-card__item {
-    width: 320px;
-    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0 10px;
+    width: 120%;
+}
+
+.products ul li {
+    display: block;
+    float: left;
+    width: 20%;
+    margin: 40px 35px;
 }
 
 .kiwi_img {
@@ -127,8 +143,8 @@ main {
     justify-content: space-around;
 }
 
-.paginate_links {
+svg.w-5.h-5 {
     width: 30px;
     height: 30px;
-}
+  }
 
