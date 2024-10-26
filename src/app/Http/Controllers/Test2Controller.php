@@ -12,7 +12,8 @@ class Test2Controller extends Controller
     {
         $products = Product::all();
         $products = Product::Paginate(6);
-        return view('index', compact('products'));
+        $image = Product::all();
+        return view('index', compact('products', 'image'));
 	  }
 
     public function edit($protectId)
@@ -31,9 +32,6 @@ class Test2Controller extends Controller
 
     public function store(Request $request)
     {
-        $img = $request->file('image');
-        $path = $img->store('storage');
-        $products->image = basename($path);
         return view('register');
     }
 
